@@ -1,95 +1,523 @@
-<!doctype html>
-<html lang="fr">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#101827">
-<title>Le labo de maths de Charly</title>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Le carnet de Charly</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap">
 <style>
-:root{--bg:#101827;--panel:#192438;--panel2:#202f47;--ink:#f4f7fb;--muted:#b7c4d8;--lime:#c6f36b;--blue:#86d9ff;--pink:#ff9ec7;--line:#34435b}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at top right,#243653 0,transparent 42%),var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}button,input{font:inherit}button{cursor:pointer}.wrap{max-width:780px;margin:auto;padding:18px 16px 90px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:8px 0 22px}.brand{font-weight:850;letter-spacing:.02em}.pill{font-size:.78rem;color:var(--lime);border:1px solid #58723c;border-radius:999px;padding:5px 10px;white-space:nowrap}.hero{padding:25px 22px;border:1px solid var(--line);border-radius:25px;background:linear-gradient(140deg,#263b57,#192438 68%);position:relative;overflow:hidden}.eyebrow{color:var(--lime);font-weight:800;text-transform:uppercase;font-size:.75rem;letter-spacing:.12em}.hero h1{font-size:clamp(2rem,8vw,3.3rem);line-height:1.02;margin:12px 0}.hero p{color:var(--muted);max-width:520px;margin-bottom:20px}.hero .sticker{position:absolute;right:17px;top:22px;font-size:2.7rem;transform:rotate(9deg)}.progressline{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:.85rem}.bar{height:7px;background:#0d1420;border-radius:9px;flex:1;overflow:hidden}.bar span{display:block;height:100%;width:0;background:var(--lime);transition:width .3s}.tabs{display:flex;gap:8px;overflow:auto;padding:17px 0 12px;position:sticky;top:0;background:#101827ed;backdrop-filter:blur(10px);z-index:4}.tab{border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:999px;padding:9px 14px;white-space:nowrap;font-weight:700}.tab.active{background:var(--lime);color:#152018;border-color:var(--lime)}section{scroll-margin-top:82px}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:24px 0 12px}.sectionhead h2{font-size:1.45rem;margin:0}.small{font-size:.83rem;color:var(--muted)}.card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:18px;margin:12px 0}.card h3{margin:0 0 8px;font-size:1.12rem}.card p{margin:7px 0;color:var(--muted)}.tag{font-size:.72rem;color:var(--blue);text-transform:uppercase;font-weight:850;letter-spacing:.08em}.math{font-size:1.15rem;font-weight:800;letter-spacing:.01em;color:var(--ink)}.highlight{color:var(--lime)}.blue{color:var(--blue)}.pink{color:var(--pink)}.example{background:#111a29;border-radius:13px;padding:13px;margin-top:12px;border:1px solid #2d3c53}.reveal{border:1px solid #50627a;border-radius:12px;padding:9px 12px;background:transparent;color:var(--blue);font-weight:750;margin-top:10px}.answer{display:none;color:var(--lime);margin-top:9px}.answer.show{display:block}.minirow{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.numberchip{border:1px solid #41516a;background:#111a29;padding:5px 10px;border-radius:10px;font-weight:750}.demo{margin-top:12px;background:#111a29;border:1px solid #2d3c53;border-radius:14px;padding:13px}.slider{width:100%;accent-color:var(--lime);margin:12px 0}.number{font-size:1.7rem;font-weight:850;color:var(--lime)}.intervalbar{height:32px;position:relative;margin:12px 8px 2px;border-bottom:2px solid #8393a8}.intervalbar:before{content:"";position:absolute;left:0;right:0;bottom:-5px;height:8px;background:repeating-linear-gradient(90deg,transparent 0 calc(10% - 1px),#8393a8 calc(10% - 1px) 10%)}.dot{position:absolute;bottom:-8px;width:14px;height:14px;border-radius:50%;background:var(--lime);border:2px solid #101827;transform:translateX(-50%)}.ticks{display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted)}.checkbtn,.primary{border:0;border-radius:12px;background:var(--lime);color:#142018;font-weight:850;padding:11px 15px}.secondary{background:var(--panel2);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:10px 13px;font-weight:750}.quizopt{display:flex;gap:10px;align-items:center;text-align:left;width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:#111a29;color:var(--ink);margin:7px 0}.quizopt:focus,.quizopt:hover{border-color:var(--blue)}.quizfeedback{min-height:24px;font-weight:700;margin-top:8px}.field{width:100%;background:#111a29;border:1px solid #4a5c76;border-radius:12px;padding:12px;color:var(--ink);margin:5px 0 10px}.exercise{counter-increment:exercise}.exhead{display:flex;gap:10px;align-items:center}.exnum{width:34px;height:34px;border-radius:11px;background:var(--lime);color:#142018;font-weight:900;display:grid;place-items:center;flex-shrink:0}.checklist{display:flex;align-items:flex-start;gap:10px;margin:10px 0;color:var(--muted)}.checklist input{margin-top:6px;accent-color:var(--lime)}.footer{margin-top:28px;text-align:center;color:var(--muted);font-size:.83rem}.hide{display:none!important}@media(min-width:600px){.hero{padding:34px}.cardsgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.cardsgrid .card{margin:0}.tabs{border-radius:0 0 16px 16px}}
+/* Layout: une colonne de téléphone, une mini-leçon à la fois, barre d'onglets en bas.
+   Ambiance kiné : bleu marine clinique, rouge-corail du pouls, vert d'eau. */
+:root{
+  --bg:#F1F4F5; --surface:#FFFFFF; --ink:#0F2533; --muted:#52666F; --line:#D2DCE0;
+  --accent:#D23B26; --on-accent:#FFFFFF; --teal:#0A7B74; --sun:#FFC83D; --sun-soft:#FFF3CC;
+  --ok:#17804E; --ok-soft:#DDF3E8; --bad:#C2301F; --bad-soft:#FBE3DF; --tint:#DCEEED;
+  --r0:#E4EBEE; --r1:#D3E6E6; --r2:#BFE1DE; --r3:#A5D8D3; --r4:#86CDC6;
+  --f-display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --f-body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0B1822; --surface:#13242F; --ink:#E8F0F3; --muted:#9DB0BA; --line:#284251;
+  --accent:#FF6B54; --on-accent:#1A0B08; --teal:#3CC9BE; --sun:#FFD25E; --sun-soft:#3A3217;
+  --ok:#4CD08C; --ok-soft:#10382A; --bad:#FF8076; --bad-soft:#431C19; --tint:#10393D;
+  --r0:#162B37; --r1:#17383F; --r2:#174548; --r3:#195357; --r4:#1B6165; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B1822; --surface:#13242F; --ink:#E8F0F3; --muted:#9DB0BA; --line:#284251;
+  --accent:#FF6B54; --on-accent:#1A0B08; --teal:#3CC9BE; --sun:#FFD25E; --sun-soft:#3A3217;
+  --ok:#4CD08C; --ok-soft:#10382A; --bad:#FF8076; --bad-soft:#431C19; --tint:#10393D;
+  --r0:#162B37; --r1:#17383F; --r2:#174548; --r3:#195357; --r4:#1B6165; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5;
+  padding-block:0 96px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:560px;margin:0 auto}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.1}
+p{margin:0}
+.m{font-family:var(--f-mono);font-weight:500;font-size:.93em;white-space:nowrap}
+
+/* en-tête */
+header{padding-block:28px 8px;display:grid;gap:10px}
+.eyebrow{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:700}
+h1{font-size:clamp(34px,10vw,46px);font-weight:800;letter-spacing:-.01em}
+h1 span{color:var(--accent)}
+.sub{color:var(--muted);max-width:44ch}
+.pulse{width:100%;height:36px;display:block}
+.pulse path{fill:none;stroke:var(--accent);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;animation:beat 4.5s ease-in-out infinite}
+@keyframes beat{0%{stroke-dashoffset:1}55%,100%{stroke-dashoffset:0}}
+
+/* navigation des leçons */
+.chips{display:flex;gap:8px;overflow-x:auto;padding-block:12px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font:700 14px var(--f-body);
+  padding:9px 14px;border-radius:99px;min-height:40px;cursor:pointer}
+.chip[aria-current="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip.done:not([aria-current="true"]){border-color:var(--teal);color:var(--teal)}
+button:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+
+/* leçon */
+.lesson{display:grid;gap:16px;padding-block:8px 8px;animation:rise .35s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}}
+.meta{font-size:13px;color:var(--muted);font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+h2{font-size:clamp(27px,7.5vw,34px);font-weight:800}
+.lead{font-size:17px}
+.fig{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:12px;display:grid;gap:12px;min-width:0}
+svg{display:block;width:100%;height:auto;max-width:100%}
+.say{font-size:16px;min-height:3.1em}
+.say b,.lead b,li b,.note b{font-weight:700}
+.kine{background:var(--sun-soft);border-radius:12px;padding:12px 14px;font-size:15px}
+.kine .tag{display:block;font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;margin-bottom:2px}
+.rule{background:var(--tint);border-radius:12px;padding:12px 14px;display:grid;gap:6px;font-size:15.5px}
+.rule h3{font-size:16px}
+ul.tight{margin:0;padding-left:20px;display:grid;gap:4px}
+
+/* boutons */
+.btn{font:700 15px var(--f-body);min-height:46px;padding:10px 18px;border-radius:12px;border:0;background:var(--accent);color:var(--on-accent);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn.small{min-height:42px;padding:8px 14px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.pager{display:flex;justify-content:space-between;gap:10px;padding-block:8px}
+.seg{display:flex;background:var(--bg);border-radius:12px;padding:4px;gap:4px;border:1px solid var(--line)}
+.seg button{flex:1;min-width:0;border:0;background:transparent;color:var(--muted);font:700 14px var(--f-body);min-height:40px;border-radius:9px;cursor:pointer;padding:6px}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.pick{display:flex;flex-wrap:wrap;gap:8px}
+.pick button{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font:500 16px var(--f-mono);min-height:44px;min-width:52px;padding:6px 12px;border-radius:12px;cursor:pointer}
+.pick button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* svg */
+.grid{stroke:var(--line);stroke-width:1}
+.axis{stroke:var(--muted);stroke-width:1.5}
+.tick{fill:var(--muted);font:500 10px var(--f-mono)}
+.curve{fill:none;stroke:var(--teal);stroke-width:3.5;stroke-linecap:round}
+.curve2{fill:none;stroke:var(--ink);stroke-width:3.5;stroke-linecap:round}
+.guide{stroke:var(--accent);stroke-width:2;stroke-dasharray:5 4;fill:none}
+.guide2{stroke:var(--ink);stroke-width:2;stroke-dasharray:5 4;fill:none}
+.pt{fill:var(--accent);stroke:var(--surface);stroke-width:2}
+.pt2{fill:var(--sun);stroke:var(--ink);stroke-width:2}
+.lab{font:700 12px var(--f-body);fill:var(--ink)}
+.labc{font:700 12px var(--f-body);fill:var(--accent)}
+.draw{stroke-dasharray:1;stroke-dashoffset:0;animation:draw 1.1s ease-out both}
+.draw.d2{animation-delay:.5s}
+@keyframes draw{from{stroke-dashoffset:1}}
+.pop{transform-box:fill-box;transform-origin:center;animation:pop .5s 1.4s cubic-bezier(.3,1.8,.5,1) both}
+@keyframes pop{from{transform:scale(0)}}
+.ringtxt{font:700 12px var(--f-body);fill:var(--ink)}
+.ringtxt .big{font:800 17px var(--f-display)}
+.dot{transition:transform .7s cubic-bezier(.5,1.4,.5,1)}
+.dot rect{fill:var(--accent)}
+.dot text{fill:var(--on-accent);font:700 13px var(--f-mono);text-anchor:middle}
+
+/* machine */
+.machine{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1.2fr) auto minmax(0,1fr);align-items:center;gap:6px;text-align:center}
+.machine .box{border-radius:12px;padding:10px 4px;min-height:68px;display:grid;place-content:center;gap:2px;font-family:var(--f-mono);font-weight:700;font-size:14px;overflow-wrap:anywhere}
+.machine small{font:700 10px var(--f-body);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.box.in{background:var(--bg);border:1px solid var(--line)}
+.box.fn{background:var(--ink);color:var(--bg)}
+.box.out.ok{background:var(--ok-soft);color:var(--ok)}
+.box.out.bad{background:var(--bad-soft);color:var(--bad);animation:shake .4s}
+@keyframes shake{20%{transform:translateX(-5px)}40%{transform:translateX(5px)}60%{transform:translateX(-4px)}80%{transform:translateX(3px)}}
+.arrow{color:var(--muted);font-size:18px}
+.nums{display:grid;grid-template-columns:repeat(11,minmax(0,1fr));gap:3px}
+.nums button{border:2px solid transparent;border-radius:9px;font:700 12px var(--f-mono);min-height:44px;padding:0;cursor:pointer;color:var(--ink)}
+.nums button.ok{background:var(--ok-soft)}
+.nums button.bad{background:var(--bad-soft)}
+.nums button[aria-pressed="true"]{border-color:var(--ink)}
+.legend{display:flex;gap:14px;font-size:13px;color:var(--muted);flex-wrap:wrap}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:4px;margin-right:5px;vertical-align:-1px}
+
+/* stepper */
+.st-lines{display:grid;gap:6px;font-family:var(--f-mono);font-weight:500;font-size:15px}
+.st-line{padding:6px 10px;background:var(--bg);border-radius:8px;overflow-wrap:anywhere}
+.st-line.new{animation:rise .35s ease both}
+.st-line.last{background:var(--ok-soft);color:var(--ok);font-weight:700}
+.stp{display:grid;gap:10px}
+.stp h3{font-size:17px}
+
+/* exercices */
+.exo{display:grid;gap:14px;padding-block:8px;animation:rise .35s ease both}
+.exo section{display:grid;gap:12px;padding-block:14px;border-top:2px solid var(--line)}
+.exo h2{font-size:26px}
+.score{font:700 14px var(--f-mono);color:var(--teal)}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px;display:grid;gap:10px}
+.q.good{border-color:var(--ok)}
+.qexp{font:700 22px var(--f-mono)}
+.opts{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.opts button{border:1.5px solid var(--line);background:var(--bg);color:var(--ink);font:700 20px var(--f-body);min-height:48px;border-radius:10px;cursor:pointer;padding:0}
+.opts button.right{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.opts button.wrong{background:var(--bad-soft);border-color:var(--bad);color:var(--bad);animation:shake .4s}
+.opts button:disabled{cursor:default}
+.fb{font-size:14.5px;min-height:1.4em;color:var(--muted)}
+.fb.ok{color:var(--ok);font-weight:700}
+.fb.no{color:var(--bad)}
+.qa{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:grid;gap:8px}
+.qa .fx{font:700 20px var(--f-mono);overflow-wrap:anywhere}
+.qa .hint{font-size:14px;color:var(--muted)}
+details summary{cursor:pointer;font-weight:700;color:var(--accent);min-height:36px;display:flex;align-items:center;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"▸";margin-right:8px;transition:transform .2s}
+details[open] summary::before{transform:rotate(90deg)}
+details .corr{display:grid;gap:4px;padding-top:6px;font-family:var(--f-mono);font-size:14.5px}
+details .corr .fin{color:var(--ok);font-weight:700}
+.win{background:var(--ok-soft);color:var(--ok);padding:12px 14px;border-radius:12px;font-weight:700}
+
+/* barre d'onglets */
+nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--surface);border-top:1px solid var(--line);
+  display:flex;gap:8px;padding:8px max(16px,env(safe-area-inset-right,0px)) calc(8px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+nav.tabs button{flex:1;max-width:280px;margin:0 auto;border:0;background:transparent;color:var(--muted);font:700 15px var(--f-body);min-height:48px;border-radius:12px;cursor:pointer}
+nav.tabs button[aria-current="page"]{background:var(--ink);color:var(--bg)}
+nav.tabs{justify-content:center}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
-</head>
-<body>
+
 <div class="wrap">
-<header class="top"><div class="brand">✳ LE LABO DE MATHS 26/10/2026</div><div class="pill">MISSION SECONDE</div></header>
-<div class="hero">
-<div class="sticker">∑</div><div class="eyebrow">Brief de mission · 20 min</div>
-<h1>Salut Charly.<br><span class="highlight">À toi de jouer.</span></h1>
-<p>Une petite remise en route sur les fonctions : des rappels courts, des mini-manips et quelques exercices pour être prêt au prochain cours. Pas besoin d'y passer tes vacances.</p>
-<div class="progressline"><span id="progressText">0 / 4 notions vues</span><div class="bar"><span id="progressBar"></span></div></div>
+  <header>
+    <div class="eyebrow">Maths · Seconde · Généralités sur les fonctions</div>
+    <h1>Salut <span>Charly</span></h1>
+    <p class="sub">Voilà ce qu'on a vu ensemble : 5 mini-leçons à toucher et à essayer, puis tes exercices. Compte 25 minutes en tout.</p>
+    <svg class="pulse" viewBox="0 0 320 36" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0 20H90L100 20L108 5L118 33L126 13L132 20H210L218 20L226 7L236 31L244 20H320"/></svg>
+  </header>
+  <main id="app"></main>
 </div>
-<nav class="tabs" aria-label="Navigation"><button class="tab active" data-go="cours">Réviser</button><button class="tab" data-go="entrainement">S'entraîner</button><button class="tab" data-go="bilan">Bilan</button></nav>
+<nav class="tabs" aria-label="Sections">
+  <button id="t-cours" data-tab="cours">Cours</button>
+  <button id="t-exo" data-tab="exercices">Exercices</button>
+</nav>
 
-<section id="cours">
-<div class="sectionhead"><h2>01 — Les bases</h2><span class="small">4 mini-fiches</span></div>
-<div class="card" id="sets">
-<div class="tag">Fiche 1 · Les ensembles</div><h3>Dans quelle famille vit ce nombre ?</h3>
-<p>Les ensembles sont des familles emboîtées. Plus on avance vers la droite, plus il y a de nombres.</p>
-<div class="minirow" style="margin:14px 0"><span class="numberchip">ℕ</span><span>⊂</span><span class="numberchip">ℤ</span><span>⊂</span><span class="numberchip">𝔻</span><span>⊂</span><span class="numberchip">ℚ</span><span>⊂</span><span class="numberchip">ℝ</span></div>
-<p><b class="highlight">ℕ</b> naturels (0, 1, 2…) · <b class="highlight">ℤ</b> entiers relatifs (… −2, −1, 0, 1…) · <b class="highlight">𝔻</b> décimaux (écriture décimale finie) · <b class="highlight">ℚ</b> rationnels (fractions) · <b class="highlight">ℝ</b> réels (tous les nombres de la droite).</p>
-<div class="example"><div class="math">−3 ∈ ℤ, mais −3 ∉ ℕ</div><p>Et 0,25 ∈ 𝔻 ; √2 ∈ ℝ mais √2 ∉ ℚ.</p></div>
-<div class="demo"><b>Mini-test</b><p>Le plus petit ensemble de cette liste qui contient −7 ?</p><button class="quizopt" data-answer="false">ℕ</button><button class="quizopt" data-answer="true">ℤ</button><button class="quizopt" data-answer="false">𝔻</button><div class="quizfeedback" aria-live="polite"></div></div>
-</div>
-<div class="card" id="image">
-<div class="tag">Fiche 2 · Image et antécédent</div><h3>La fonction, c'est une machine</h3><p>Tu entres un nombre <i>x</i>, la machine calcule <i>f(x)</i>, et tu obtiens son image.</p>
-<div class="demo"><div class="minirow" style="justify-content:space-between"><span class="numberchip">Entrée x</span><span>→</span><span class="numberchip">× 2 + 1</span><span>→</span><span class="numberchip">Sortie f(x)</span></div><label for="machine" class="small">Change l'entrée :</label><input class="slider" id="machine" type="range" min="-4" max="5" value="2"><div class="minirow"><div><div class="small">Entrée</div><div class="number" id="inputNum">2</div></div><div style="font-size:1.4rem">→</div><div><div class="small">Image</div><div class="number" id="outputNum">5</div></div></div><p class="small">Ici, f(x) = 2x + 1. L'image de 2 est 5.</p></div>
-<p><b class="blue">Trouver une image :</b> on remplace x par le nombre donné.</p><p><b class="pink">Trouver un antécédent :</b> on cherche x à partir du résultat. Il peut y en avoir zéro, un ou plusieurs.</p>
-<div class="example"><div class="math">f(x) = 2x + 1</div><p>Image de 3 : f(3) = 2 × 3 + 1 = <b class="highlight">7</b>.</p><p>Antécédent de 7 : 2x + 1 = 7, donc x = <b class="highlight">3</b>.</p></div>
-<div class="demo"><b>À toi</b><p>Avec f(x) = 2x + 1, quelle est l'image de 4 ?</p><button class="quizopt" data-answer="false">8</button><button class="quizopt" data-answer="true">9</button><button class="quizopt" data-answer="false">10</button><div class="quizfeedback" aria-live="polite"></div></div>
-</div>
-<div class="card" id="domain">
-<div class="tag">Fiche 3 · Ensemble de définition</div><h3>Quelles entrées sont autorisées ?</h3><p>L'ensemble de définition, noté <b>D<sub>f</sub></b>, contient les valeurs de x pour lesquelles le calcul est possible.</p>
-<div class="example"><p><b>1. Pas de piège :</b> f(x) = 3x − 4</p><div class="math highlight">D<sub>f</sub> = ℝ</div><p><b>2. Racine carrée :</b> g(x) = √(x − 2)</p><p>On doit avoir x − 2 ≥ 0, donc x ≥ 2.</p><div class="math highlight">D<sub>g</sub> = [2 ; +∞[</div><p><b>3. Fraction :</b> h(x) = 1/(x + 3)</p><p>Le dénominateur ne doit pas être nul : x + 3 ≠ 0.</p><div class="math highlight">D<sub>h</sub> = ℝ \ {−3}</div></div>
-<div class="demo"><b>Règle express</b><p>Pour une racine carrée : ce qui est sous la racine doit être ≥ 0. Pour une fraction : le dénominateur doit être ≠ 0.</p><button class="reveal" data-reveal="domainHint">Pourquoi √(x + 4) est définie seulement si x ≥ −4 ?</button><div class="answer" id="domainHint">Parce que x + 4 ≥ 0, donc x ≥ −4. Son domaine est [−4 ; +∞[.</div></div>
-</div>
-<div class="card" id="intervals">
-<div class="tag">Fiche 4 · Intervalles</div><h3>La droite des nombres</h3><p>Un intervalle décrit une portion de la droite réelle.</p>
-<div class="cardsgrid">
-<div class="example"><div class="math">[2 ; 5]</div><p>2 et 5 sont inclus.</p><div class="minirow"><span class="highlight">●</span> 2 ━━━━━ 5 <span class="highlight">●</span></div></div>
-<div class="example"><div class="math">]2 ; 5[</div><p>2 et 5 sont exclus.</p><div class="minirow"><span class="blue">○</span> 2 ━━━━━ 5 <span class="blue">○</span></div></div>
-</div>
-<p><b class="highlight">Crochet fermé [ ]</b> : borne incluse. <b class="blue">Crochet ouvert ] [</b> : borne exclue. Avec +∞ ou −∞, la borne est toujours ouverte.</p>
-<div class="demo"><label for="intervalNumber"><b>Explore : où se place ton nombre ?</b></label><input id="intervalNumber" class="slider" type="range" min="-5" max="7" step=".5" value="2.5"><div class="number" id="intervalValue">2,5</div><div class="intervalbar"><span class="dot" id="intervalDot" style="left:62.5%"></span></div><div class="ticks"><span>−5</span><span>−2</span><span>1</span><span>4</span><span>7</span></div><p id="intervalMessage">2,5 appartient à ]2 ; 5[.</p></div>
-</div>
-<div class="card" id="intersection">
-<div class="tag">Bonus · Intersection de deux droites</div><h3>Le point où elles se croisent</h3><p>Pour trouver l'intersection de deux fonctions affines, on cherche quand leurs images sont égales.</p>
-<div class="example"><div class="math">f(x) = 2x + 1 et g(x) = −x + 7</div><p>1. On résout : 2x + 1 = −x + 7</p><p>2. 3x = 6, donc <b class="highlight">x = 2</b>.</p><p>3. On calcule y : f(2) = 5.</p><div class="math highlight">Intersection : (2 ; 5)</div></div>
-<p>À retenir : égaliser les deux expressions pour trouver x, puis remplacer x pour trouver y.</p>
-</div>
-</section>
-
-<section id="entrainement">
-<div class="sectionhead"><h2>02 — À toi de jouer</h2><span class="small">10–15 min</span></div>
-<p class="small">Fais les exercices sur papier avant d'afficher les corrections. Essaie sans calculatrice si possible.</p>
-<div class="card exercise"><div class="exhead"><div class="exnum">1</div><div><div class="tag">Classer les nombres</div><h3>Le plus petit intervalle possible</h3></div></div><p>Pour chaque nombre, donne le plus petit ensemble parmi ℕ, ℤ, 𝔻, ℚ, ℝ auquel il appartient.</p>
-<ol><li>12</li><li>−4</li><li>2,75</li><li>⅓</li><li>√2</li><li>5 − 8</li></ol>
-<button class="reveal" data-reveal="ex1">Voir la correction</button><div class="answer" id="ex1">1. ℕ · 2. ℤ · 3. 𝔻 · 4. ℚ · 5. ℝ · 6. ℤ (car 5 − 8 = −3).<br><span class="small">On choisit toujours le plus petit ensemble de la chaîne.</span></div></div>
-<div class="card exercise"><div class="exhead"><div class="exnum">2</div><div><div class="tag">Ensembles de définition</div><h3>Autorisé ou interdit ?</h3></div></div><p>Donne l'ensemble de définition de chaque fonction.</p><ol><li>f(x) = 4x − 1</li><li>g(x) = √(2x + 6)</li><li>h(x) = 5/(x − 4)</li></ol>
-<button class="reveal" data-reveal="ex2">Voir la correction</button><div class="answer" id="ex2">1. D<sub>f</sub> = ℝ.<br>2. 2x + 6 ≥ 0, donc x ≥ −3 : D<sub>g</sub> = [−3 ; +∞[.<br>3. x − 4 ≠ 0, donc x ≠ 4 : D<sub>h</sub> = ℝ \ {4}.</div></div>
-<div class="card exercise"><div class="exhead"><div class="exnum">3</div><div><div class="tag">Intersection</div><h3>Le point de rencontre</h3></div></div><p>Détermine les coordonnées du point d'intersection des droites représentatives de :</p><div class="math">f(x) = 3x − 2<br>g(x) = x + 4</div><p>Écris l'équation à résoudre, puis calcule x et y.</p><button class="reveal" data-reveal="ex3">Voir la correction</button><div class="answer" id="ex3">3x − 2 = x + 4, donc 2x = 6 et x = 3. Puis y = 3 × 3 − 2 = 7. <b>Intersection : (3 ; 7).</b></div></div>
-<div class="card exercise"><div class="exhead"><div class="exnum">4</div><div><div class="tag">Image ou antécédent ?</div><h3>Dernier check</h3></div></div><p>Soit f(x) = 5 − 2x.</p><ol><li>Calcule l'image de 3.</li><li>Trouve l'antécédent de 1.</li></ol><button class="reveal" data-reveal="ex4">Voir la correction</button><div class="answer" id="ex4">1. f(3) = 5 − 6 = −1.<br>2. 5 − 2x = 1, donc −2x = −4 et x = 2.</div></div>
-</section>
-<section id="bilan">
-<div class="sectionhead"><h2>03 — Avant de fermer</h2><span class="small">1 minute</span></div>
-<div class="card"><h3>Tu te sens comment ?</h3><p>Coche ce que tu sais refaire sans aide. Ça permettra de cibler le prochain cours.</p>
-<label class="checklist"><input type="checkbox" class="done"> Je sais classer un nombre dans ℕ, ℤ, 𝔻, ℚ ou ℝ.</label>
-<label class="checklist"><input type="checkbox" class="done"> Je sais calculer une image et trouver un antécédent.</label>
-<label class="checklist"><input type="checkbox" class="done"> Je sais trouver le domaine d'une racine et d'une fraction.</label>
-<label class="checklist"><input type="checkbox" class="done"> Je sais résoudre une intersection de deux fonctions affines.</label>
-<div class="example"><b id="bilanText">0 / 4 acquis cochés</b><p class="small">Objectif : mieux comprendre, pas tout mémoriser en une fois.</p></div>
-<button class="primary" id="finish">Terminé pour aujourd'hui</button><div class="answer" id="finishMsg">Mission terminée. Bien joué pour le travail : garde les exercices où tu as hésité pour le prochain cours.</div></div>
-</section>
-<div class="footer">Le labo de maths de Charly · Une courte session, puis retour aux vacances.</div>
-</div>
 <script>
-document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>{document.getElementById(b.dataset.go).scrollIntoView({behavior:'smooth'});document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t===b))}));
-document.querySelectorAll('[data-reveal]').forEach(b=>b.addEventListener('click',()=>{let el=document.getElementById(b.dataset.reveal);el.classList.toggle('show');b.textContent=el.classList.contains('show')?'Masquer la correction':'Voir la correction'}));
-document.querySelectorAll('.demo').forEach(d=>{d.querySelectorAll('.quizopt').forEach(b=>b.addEventListener('click',()=>{let f=d.querySelector('.quizfeedback');if(!f)return;f.textContent=b.dataset.answer==='true'?'Exact.':'Pas tout à fait : réessaie.';f.style.color=b.dataset.answer==='true'?'#c6f36b':'#ff9ec7';d.querySelectorAll('.quizopt').forEach(x=>x.style.borderColor=x===b?(b.dataset.answer==='true'?'#c6f36b':'#ff9ec7'):'#34435b')}))});
-const machine=document.getElementById('machine');machine.addEventListener('input',()=>{document.getElementById('inputNum').textContent=machine.value;document.getElementById('outputNum').textContent=2*Number(machine.value)+1});
-const intInput=document.getElementById('intervalNumber');function updateInterval(){let n=Number(intInput.value);document.getElementById('intervalValue').textContent=String(n).replace('.',',');document.getElementById('intervalDot').style.left=((n+5)/12*100)+'%';document.getElementById('intervalMessage').textContent=n>2&&n<5?`${String(n).replace('.',',')} appartient à ]2 ; 5[.`:n===2||n===5?`${String(n).replace('.',',')} est une borne : elle appartient à [2 ; 5], mais pas à ]2 ; 5[.`:`${String(n).replace('.',',')} est en dehors de ]2 ; 5[.`}intInput.addEventListener('input',updateInterval);
-function updateProgress(){let n=document.querySelectorAll('.done:checked').length;document.getElementById('bilanText').textContent=n+' / 4 acquis cochés';document.getElementById('progressText').textContent=n+' / 4 notions vues';document.getElementById('progressBar').style.width=(n*25)+'%'}document.querySelectorAll('.done').forEach(c=>c.addEventListener('change',updateProgress));
-document.getElementById('finish').addEventListener('click',()=>document.getElementById('finishMsg').classList.toggle('show'));
+const $=(s,r=document)=>r.querySelector(s);
+const $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const fr=n=>String(Math.round(n*100)/100).replace('.',',').replace('-','−');
+const par=n=>n<0?`(${fr(n)})`:fr(n);
+const app=$('#app');
+
+/* ---------- outils ---------- */
+function graph(o){
+  const w=340,h=o.h||300,p=10;
+  const X=x=>p+(x-o.x0)/(o.x1-o.x0)*(w-2*p), Y=y=>h-p-(y-o.y0)/(o.y1-o.y0)*(h-2*p);
+  let g='';
+  for(let i=Math.ceil(o.x0);i<=o.x1;i++) g+=`<line class="grid" x1="${X(i)}" y1="${Y(o.y0)}" x2="${X(i)}" y2="${Y(o.y1)}"/>`;
+  for(let i=Math.ceil(o.y0);i<=o.y1;i++) g+=`<line class="grid" x1="${X(o.x0)}" y1="${Y(i)}" x2="${X(o.x1)}" y2="${Y(i)}"/>`;
+  g+=`<line class="axis" x1="${X(o.x0)}" y1="${Y(0)}" x2="${X(o.x1)}" y2="${Y(0)}"/><line class="axis" x1="${X(0)}" y1="${Y(o.y0)}" x2="${X(0)}" y2="${Y(o.y1)}"/>`;
+  for(let i=Math.ceil(o.x0);i<=o.x1;i++) if(i) g+=`<text class="tick" x="${X(i)}" y="${Y(0)+13}" text-anchor="middle">${fr(i)}</text>`;
+  for(let i=Math.ceil(o.y0);i<=o.y1;i++) if(i) g+=`<text class="tick" x="${X(0)-5}" y="${Y(i)+3.5}" text-anchor="end">${fr(i)}</text>`;
+  g+=`<text class="tick" x="${X(0)-5}" y="${Y(0)+13}" text-anchor="end">0</text>`;
+  return {w,h,X,Y,base:g};
+}
+function path(G,f,a,b,step=.05){let d='';for(let x=a;x<=b+1e-9;x+=step){d+=(d?'L':'M')+G.X(x).toFixed(1)+' '+G.Y(f(x)).toFixed(1)}return d}
+function stepper(root,title,lines){
+  root.className='stp';
+  root.innerHTML=`<h3>${title}</h3><div class="st-lines"></div><div class="row"><button class="btn small">Étape suivante</button></div>`;
+  const box=$('.st-lines',root),btn=$('button',root);let i=0;
+  const show=()=>{box.innerHTML=lines.slice(0,i+1).map((l,j)=>`<div class="st-line${j===i?' new':''}${j===lines.length-1&&i===j?' last':''}">${l}</div>`).join('');
+    btn.textContent=i>=lines.length-1?'Rejouer':'Étape suivante'};
+  btn.onclick=()=>{i=i>=lines.length-1?0:i+1;show()};show();
+}
+function seg(root,items,cur,cb){
+  root.className='seg';
+  const render=()=>{root.innerHTML=items.map(([k,t])=>`<button data-k="${k}" aria-pressed="${k===cur}">${t}</button>`).join('')};
+  root.onclick=e=>{const b=e.target.closest('button');if(!b)return;cur=b.dataset.k;render();cb(cur)};
+  render();
+}
+
+/* ---------- Leçon 1 : ensembles ---------- */
+function L1(el){
+  const lv=[['ℝ','réels'],['ℚ','rationnels'],['𝔻','décimaux'],['ℤ','entiers relatifs'],['ℕ','entiers naturels']];
+  const rc=[[0,0,320,270],[14,34,292,220],[28,68,264,170],[42,102,236,120],[56,136,208,70]];
+  const ys=[17,51,85,119,171];
+  const nums=[
+    {t:'7',l:4,w:'7 est un entier positif.'},
+    {t:'−4',l:3,w:'−4 est un entier négatif : il sort de ℕ.'},
+    {t:'0,75',l:2,w:'0,75 s\'écrit avec un nombre fini de chiffres après la virgule.'},
+    {t:'1/3',l:1,w:'1/3 = 0,333… Les chiffres ne s\'arrêtent jamais : pas décimal. Mais c\'est une fraction d\'entiers.'},
+    {t:'√2',l:0,w:'√2 ne s\'écrit pas comme une fraction : c\'est un irrationnel.'},
+    {t:'π',l:0,w:'π ne s\'écrit pas comme une fraction : c\'est un irrationnel.'}];
+  el.innerHTML=`
+  <div class="meta">Mini-leçon 1 sur 5 · 3 min</div>
+  <h2>Les ensembles de nombres</h2>
+  <p class="lead">On les emboîte comme des poupées russes : <span class="m">ℕ ⊂ ℤ ⊂ 𝔻 ⊂ ℚ ⊂ ℝ</span>. Touche un nombre et regarde où il se range. On retient toujours <b>le plus petit ensemble</b> qui le contient.</p>
+  <div class="fig">
+    <svg viewBox="0 0 320 270" role="img" aria-label="Ensembles emboîtés de ℕ à ℝ">
+      ${rc.map((r,i)=>`<rect x="${r[0]}" y="${r[1]}" width="${r[2]}" height="${r[3]}" rx="16" fill="var(--r${i})" stroke="var(--line)"/>`).join('')}
+      ${lv.map((n,i)=>`<text class="ringtxt" x="${rc[i][0]+11}" y="${rc[i][1]+22}"><tspan class="big">${n[0]}</tspan>  ${n[1]}</text>`).join('')}
+      <g class="dot" id="l1dot" style="transform:translate(226px,171px)"><rect x="-27" y="-13" width="54" height="26" rx="13"/><text y="5" id="l1t">7</text></g>
+    </svg>
+    <div class="pick" id="l1p">${nums.map((n,i)=>`<button data-i="${i}" aria-pressed="${i===0}">${n.t}</button>`).join('')}</div>
+    <p class="say" id="l1s"></p>
+  </div>
+  <p class="kine"><span class="tag">En kiné</span>Le nombre de séances d'un patient est dans ℕ. Sa température, 37,5 °C, est un décimal.</p>`;
+  const set=i=>{const n=nums[i];$('#l1dot').style.transform=`translate(226px,${ys[n.l]}px)`;$('#l1t').textContent=n.t;
+    $$('#l1p button').forEach((b,j)=>b.setAttribute('aria-pressed',j===i));
+    $('#l1s').innerHTML=`<b class="m">${n.t} ∈ ${lv[n.l][0]}</b>. ${n.w}${n.l<4?' Il est aussi dans tous les ensembles plus grands.':' Il est aussi dans tous les autres ensembles.'}`;};
+  $('#l1p').onclick=e=>{const b=e.target.closest('button');if(b)set(+b.dataset.i)};
+  set(0);
+}
+
+/* ---------- Leçon 2 : image et antécédent ---------- */
+function L2(el){
+  const f=x=>x*x-2*x-1;
+  const G=graph({x0:-2,x1:4,y0:-3,y1:5});
+  const cv=path(G,f,-1.5,3.5);
+  el.innerHTML=`
+  <div class="meta">Mini-leçon 2 sur 5 · 5 min</div>
+  <h2>Image et antécédent</h2>
+  <p class="lead">Une fonction fait correspondre à chaque <b>x</b> un seul <b>y</b>. Ce y est l'<b>image</b> de x. Le x de départ est un <b>antécédent</b> de y.</p>
+  <div class="fig">
+    <div id="l2seg"></div>
+    <div id="l2g" class="fig" style="border:0;padding:0">
+      <svg viewBox="0 0 ${G.w} ${G.h}" role="img" aria-label="Courbe de f">
+        ${G.base}
+        <path class="curve" d="${cv}"/>
+        <g id="l2d"></g>
+        <text class="labc" x="${G.X(3.5)-6}" y="${G.Y(f(3.5))-8}" text-anchor="end">courbe de f</text>
+      </svg>
+      <div class="row" style="align-items:center;flex-wrap:nowrap">
+        <label class="m" for="l2r" id="l2l" style="min-width:3.4em">x = 3</label>
+        <input type="range" id="l2r" style="flex:1;min-width:0;accent-color:var(--accent);height:44px">
+      </div>
+      <p class="say" id="l2s"></p>
+    </div>
+    <div id="l2c" hidden class="fig" style="border:0;padding:0;gap:18px"><p class="lead">Avec <span class="m">f(x) = 2x + 3</span>, on n'a pas besoin du graphique : on calcule.</p><div id="l2c1"></div><div id="l2c2"></div></div>
+  </div>
+  <p class="kine"><span class="tag">En kiné</span>Sur la courbe de fréquence cardiaque d'un effort, l'image de 5 min est le pouls à 5 min. Un antécédent de 150 bpm est un moment où le cœur bat à 150.</p>
+  <div class="rule"><h3>À retenir</h3><ul class="tight"><li>Un nombre a <b>toujours une seule image</b>.</li><li>Un nombre peut avoir <b>0, 1, 2… antécédents</b>.</li></ul></div>`;
+  let mode='img';
+  const r=$('#l2r');
+  const cfg={img:{min:-1,max:3,v:3},ant:{min:-3,max:4,v:2}};
+  function draw(){
+    const v=+r.value;let h='',t='';
+    if(mode==='img'){
+      const y=f(v);
+      h=`<line class="guide" x1="${G.X(v)}" y1="${G.Y(0)}" x2="${G.X(v)}" y2="${G.Y(y)}"/><line class="guide2" x1="${G.X(v)}" y1="${G.Y(y)}" x2="${G.X(0)}" y2="${G.Y(y)}"/>
+         <circle class="pt" cx="${G.X(v)}" cy="${G.Y(0)}" r="5"/><circle class="pt2" cx="${G.X(0)}" cy="${G.Y(y)}" r="6"/><circle class="pt" cx="${G.X(v)}" cy="${G.Y(y)}" r="6"/>`;
+      $('#l2l').textContent='x = '+fr(v);
+      t=`On part de <b class="m">x = ${fr(v)}</b>, on rejoint la courbe, puis on lit y sur l'axe vertical. L'image de ${fr(v)} est <b class="m">${fr(y)}</b>.<br><span class="m">f(${fr(v)}) = ${par(v)}² − 2×${par(v)} − 1 = ${fr(y)}</span>`;
+    }else{
+      const d=2+v;let xs=[];
+      if(d===0)xs=[1];else if(d>0)xs=[1-Math.sqrt(d),1+Math.sqrt(d)];
+      xs=xs.filter(x=>x>=-1.5&&x<=3.5);
+      h=`<line class="guide2" x1="${G.X(-2)}" y1="${G.Y(v)}" x2="${G.X(4)}" y2="${G.Y(v)}"/><circle class="pt2" cx="${G.X(0)}" cy="${G.Y(v)}" r="6"/>`+
+        xs.map(x=>`<line class="guide" x1="${G.X(x)}" y1="${G.Y(v)}" x2="${G.X(x)}" y2="${G.Y(0)}"/><circle class="pt" cx="${G.X(x)}" cy="${G.Y(0)}" r="5"/><circle class="pt" cx="${G.X(x)}" cy="${G.Y(v)}" r="6"/>`).join('');
+      $('#l2l').textContent='y = '+fr(v);
+      const ap=xs.some(x=>Math.abs(x-Math.round(x))>.001)?'≈ ':'';
+      if(!xs.length)t=`On part de <b class="m">y = ${fr(v)}</b> : la courbe n'atteint jamais cette hauteur. <b>Aucun antécédent.</b>`;
+      else if(xs.length===1)t=`On part de <b class="m">y = ${fr(v)}</b> : la droite touche la courbe en un seul point. <b>Un antécédent</b> : <b class="m">${ap}${fr(xs[0])}</b>.`;
+      else t=`On part de <b class="m">y = ${fr(v)}</b> et on rejoint la courbe des deux côtés. <b>Deux antécédents</b> : <b class="m">${ap}${fr(xs[0])}</b> et <b class="m">${ap}${fr(xs[1])}</b>.`;
+    }
+    $('#l2d').innerHTML=h;$('#l2s').innerHTML=t;
+  }
+  function setMode(m){
+    mode=m;$('#l2g').hidden=m==='calc';$('#l2c').hidden=m!=='calc';
+    if(m==='calc')return;
+    const c=cfg[m];r.min=c.min;r.max=c.max;r.step=1;r.value=c.v;draw();
+  }
+  seg($('#l2seg'),[['img','Image'],['ant','Antécédent'],['calc','Par le calcul']],'img',setMode);
+  r.oninput=draw;
+  stepper($('#l2c1'),'Image de 4',['On remplace x par 4.','<b>f(4) = 2×4 + 3</b>','f(4) = 8 + 3','f(4) = 11. L\'image de 4 est 11.']);
+  stepper($('#l2c2'),'Antécédent de 7',['On cherche x tel que f(x) = 7.','<b>2x + 3 = 7</b>','2x = 7 − 3','2x = 4','x = 2. L\'antécédent de 7 est 2. Vérif : f(2) = 7']);
+  setMode('img');
+}
+
+/* ---------- Leçon 3 : ensemble de définition ---------- */
+function L3(el){
+  const fns={
+    a:{name:'f(x) = 1/(x − 2)',box:'1 ÷ (x − 2)',test:x=>x!==2,out(x){const d=x-2;if(d===0)return {ok:false,t:'impossible',d:`x − 2 = 0, donc on divise par 0.`};
+      return {ok:true,t:d>0?`1/${d}`:`−1/${-d}`,d:`x − 2 = ${fr(d)}, donc 1/${par(d)} existe.`}}},
+    b:{name:'g(x) = √(x + 3)',box:'√(x + 3)',test:x=>x+3>=0,out(x){const c=x+3;if(c<0)return {ok:false,t:'impossible',d:`x + 3 = ${fr(c)} est négatif, et √ d'un négatif n'existe pas.`};
+      const s=Math.sqrt(c);return {ok:true,t:Number.isInteger(s)?fr(s):`√${c}`,d:`x + 3 = ${fr(c)}, positif ou nul : la racine existe.`}}}};
+  let fk='a',x=2;
+  el.innerHTML=`
+  <div class="meta">Mini-leçon 3 sur 5 · 5 min</div>
+  <h2>L'ensemble de définition</h2>
+  <p class="lead">C'est la liste des x qu'on a le droit de donner à la fonction. Pense à une machine : certains nombres la font tomber en panne. Choisis une machine, puis teste des nombres.</p>
+  <div class="fig">
+    <div id="l3seg"></div>
+    <div class="machine" aria-live="polite">
+      <div class="box in"><small>entrée</small><span id="l3i"></span></div><span class="arrow">→</span>
+      <div class="box fn"><small style="color:inherit;opacity:.7">machine</small><span id="l3m"></span></div><span class="arrow">→</span>
+      <div class="box out" id="l3o"><small>sortie</small><span id="l3r"></span></div>
+    </div>
+    <p class="say" id="l3d"></p>
+    <div class="nums" id="l3n"></div>
+    <div class="legend"><span><i style="background:var(--ok-soft);border:1px solid var(--ok)"></i>autorisé</span><span><i style="background:var(--bad-soft);border:1px solid var(--bad)"></i>interdit</span></div>
+  </div>
+  <div class="rule"><h3>Les deux interdits</h3><ul class="tight"><li>On ne divise jamais par 0 : le <b>dénominateur ≠ 0</b>.</li><li>On ne prend pas la racine d'un nombre négatif : <b>ce qu'il y a sous la racine ≥ 0</b>.</li></ul></div>
+  <div class="fig" style="gap:14px">
+    <div><b class="m">f(x) = 1/(x − 2)</b><br><span class="m">x − 2 ≠ 0</span> donc <span class="m">x ≠ 2</span><br><b>D<sub>f</sub> = ℝ \\ {2}</b> <span class="m">= ]−∞ ; 2[ ∪ ]2 ; +∞[</span></div>
+    <div><b class="m">g(x) = √(x + 3)</b><br><span class="m">x + 3 ≥ 0</span> donc <span class="m">x ≥ −3</span><br><b>D<sub>g</sub> = [−3 ; +∞[</b></div>
+    <div>Si rien ne gêne (ni fraction, ni racine), l'ensemble de définition est <b>ℝ</b> tout entier.</div>
+  </div>
+  <p class="kine"><span class="tag">En kiné</span>Une durée d'effort ne peut pas être négative : dans un problème concret, l'ensemble de définition suit aussi le bon sens.</p>`;
+  function draw(){
+    const F=fns[fk],o=F.out(x);
+    $('#l3i').textContent='x = '+fr(x);$('#l3m').textContent=F.box;
+    const ob=$('#l3o');ob.className='box out '+(o.ok?'ok':'bad');$('#l3r').textContent=o.t;
+    $('#l3d').innerHTML=(o.ok?'<b>Ça marche.</b> ':'<b>Panne.</b> ')+o.d;
+    $('#l3n').innerHTML=[-5,-4,-3,-2,-1,0,1,2,3,4,5].map(n=>`<button class="${F.test(n)?'ok':'bad'}" data-n="${n}" aria-pressed="${n===x}">${fr(n)}</button>`).join('');
+  }
+  seg($('#l3seg'),[['a','1/(x − 2)'],['b','√(x + 3)']],'a',k=>{fk=k;draw()});
+  $('#l3n').onclick=e=>{const b=e.target.closest('button');if(b){x=+b.dataset.n;draw()}};
+  draw();
+}
+
+/* ---------- Leçon 4 : intervalles ---------- */
+function L4(el){
+  const I=[
+    {l:'[−2 ; 3]',a:-2,b:3,ai:1,bi:1,q:'−2 ≤ x ≤ 3',w:'Les deux crochets regardent vers le nombre : −2 et 3 sont dedans.'},
+    {l:']−2 ; 3]',a:-2,b:3,ai:0,bi:1,q:'−2 < x ≤ 3',w:'Le crochet de gauche regarde dehors : −2 est exclu. 3 est inclus.'},
+    {l:']−1 ; 4[',a:-1,b:4,ai:0,bi:0,q:'−1 < x < 4',w:'Crochets ouverts des deux côtés : −1 et 4 sont exclus.'},
+    {l:']−∞ ; 1]',a:-Infinity,b:1,ai:0,bi:1,q:'x ≤ 1',w:'Avec ∞, le crochet est toujours ouvert : on ne peut pas atteindre l\'infini.'},
+    {l:'[2 ; +∞[',a:2,b:Infinity,ai:1,bi:0,q:'x ≥ 2',w:'On part de 2 (inclus) et on va aussi loin qu\'on veut vers la droite.'}];
+  const X=v=>20+(v+4)*30,AY=64;
+  let cur=0,probe=1;
+  const br=(x,side,inc)=>{ // [ ou ]
+    const open=side==='l'?inc:!inc; // '[' si côté gauche inclus ou côté droit exclu
+    const d=open?7:-7;return `<path d="M${x+d} ${AY-17}H${x}V${AY+17}H${x+d}" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`};
+  el.innerHTML=`
+  <div class="meta">Mini-leçon 4 sur 5 · 4 min</div>
+  <h2>Les intervalles de ℝ</h2>
+  <p class="lead">Un intervalle, c'est un « morceau » de la droite des réels. Les crochets disent si on garde ou non les extrémités.</p>
+  <div class="fig">
+    <div class="pick" id="l4p">${I.map((it,i)=>`<button data-i="${i}" style="font-size:15px" aria-pressed="${i===0}">${it.l}</button>`).join('')}</div>
+    <svg viewBox="0 0 340 120" id="l4s" role="img" aria-label="Droite graduée"></svg>
+    <p class="say" id="l4t"></p>
+    <div class="row" style="align-items:center;flex-wrap:nowrap">
+      <label class="m" for="l4r" id="l4l" style="min-width:4.6em">x = 1</label>
+      <input type="range" id="l4r" min="-4" max="6" step="0.5" value="1" style="flex:1;min-width:0;accent-color:var(--accent);height:44px">
+    </div>
+    <p class="say" id="l4q"></p>
+  </div>
+  <div class="rule"><h3>À retenir</h3><ul class="tight"><li>Crochet tourné <b>vers le nombre</b> : il est inclus (≤ ou ≥).</li><li>Crochet tourné <b>vers l'extérieur</b> : il est exclu (&lt; ou &gt;).</li><li><b>∪</b> se lit « ou » : <span class="m">]−∞ ; 2[ ∪ ]2 ; +∞[</span> est tout ℝ sauf 2.</li></ul></div>
+  <p class="kine"><span class="tag">En kiné</span>Une zone d'effort entre 120 et 150 battements par minute s'écrit <span class="m">[120 ; 150]</span>.</p>`;
+  function draw(){
+    const it=I[cur];
+    const xa=isFinite(it.a)?X(it.a):6, xb=isFinite(it.b)?X(it.b):334;
+    let s='';
+    s+=`<line x1="6" y1="${AY}" x2="334" y2="${AY}" stroke="var(--muted)" stroke-width="2"/>`;
+    for(let v=-4;v<=6;v++)s+=`<line x1="${X(v)}" y1="${AY-5}" x2="${X(v)}" y2="${AY+5}" stroke="var(--muted)" stroke-width="1.5"/><text class="tick" style="font-size:11px" x="${X(v)}" y="${AY+24}" text-anchor="middle">${fr(v)}</text>`;
+    s+=`<line class="draw" pathLength="1" x1="${xa}" y1="${AY}" x2="${xb}" y2="${AY}" stroke="var(--teal)" stroke-width="7" stroke-linecap="butt"/>`;
+    if(isFinite(it.a))s+=br(xa,'l',it.ai);else s+=`<path d="M16 ${AY-9}L6 ${AY}L16 ${AY+9}" fill="none" stroke="var(--teal)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`;
+    if(isFinite(it.b))s+=br(xb,'r',it.bi);else s+=`<path d="M324 ${AY-9}L334 ${AY}L324 ${AY+9}" fill="none" stroke="var(--teal)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const px=X(probe);
+    s+=`<g><path d="M${px-6} 10L${px+6} 10L${px} 22Z" fill="var(--ink)"/><line x1="${px}" y1="22" x2="${px}" y2="${AY-8}" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="3 3"/></g>`;
+    $('#l4s').innerHTML=s;
+    $('#l4t').innerHTML=`<b class="m">${it.l}</b> veut dire <b class="m">${it.q}</b>.<br>${it.w}`;
+    const inn=(probe>it.a||(it.ai&&probe===it.a))&&(probe<it.b||(it.bi&&probe===it.b));
+    $('#l4l').textContent='x = '+fr(probe);
+    $('#l4q').innerHTML=`<b class="m">${fr(probe)} ${inn?'∈':'∉'} ${it.l}</b> : ${inn?'oui, il est dedans.':'non, il est dehors.'}`;
+  }
+  $('#l4p').onclick=e=>{const b=e.target.closest('button');if(!b)return;cur=+b.dataset.i;$$('#l4p button').forEach((c,j)=>c.setAttribute('aria-pressed',j===cur));draw()};
+  $('#l4r').oninput=e=>{probe=+e.target.value;draw()};
+  draw();
+}
+
+/* ---------- Leçon 5 : intersection de deux droites ---------- */
+function L5(el){
+  const f=x=>2*x-1,g=x=>-x+5;
+  const G=graph({x0:-1,x1:5,y0:-3,y1:8});
+  el.innerHTML=`
+  <div class="meta">Mini-leçon 5 sur 5 · 4 min</div>
+  <h2>Où se croisent deux droites ?</h2>
+  <p class="lead">Une fonction affine a pour courbe une droite. Au point où deux droites se croisent, elles ont <b>le même x</b> et <b>le même y</b>. On écrit donc <span class="m">f(x) = g(x)</span>.</p>
+  <div class="fig">
+    <svg viewBox="0 0 ${G.w} ${G.h}" role="img" aria-label="Droites de f et g qui se croisent en (2 ; 3)">
+      <defs><clipPath id="clp"><rect x="${G.X(-1)}" y="${G.Y(8)}" width="${G.X(5)-G.X(-1)}" height="${G.Y(-3)-G.Y(8)}"/></clipPath></defs>
+      ${G.base}
+      <g clip-path="url(#clp)">
+        <path class="curve draw" pathLength="1" d="M${G.X(-1)} ${G.Y(f(-1))}L${G.X(5)} ${G.Y(f(5))}"/>
+        <path class="curve2 draw d2" pathLength="1" d="M${G.X(-1)} ${G.Y(g(-1))}L${G.X(5)} ${G.Y(g(5))}"/>
+      </g>
+      <text class="lab" style="fill:var(--teal)" x="${G.X(3.6)}" y="${G.Y(f(3.6))+14}">f(x) = 2x − 1</text>
+      <text class="lab" x="${G.X(-0.9)}" y="${G.Y(g(-0.9))-8}">g(x) = −x + 5</text>
+      <line class="guide" x1="${G.X(2)}" y1="${G.Y(0)}" x2="${G.X(2)}" y2="${G.Y(3)}"/>
+      <line class="guide" x1="${G.X(0)}" y1="${G.Y(3)}" x2="${G.X(2)}" y2="${G.Y(3)}"/>
+      <circle class="pt pop" cx="${G.X(2)}" cy="${G.Y(3)}" r="7"/>
+      <text class="labc" x="${G.X(2)+11}" y="${G.Y(3)-9}" font-size="14">A(2 ; 3)</text>
+    </svg>
+    <div id="l5s"></div>
+  </div>
+  <p class="kine"><span class="tag">En kiné</span>Si la force de la jambe gauche et celle de la jambe droite progressent chacune selon une droite, leur point d'intersection dit à quel moment la jambe en retard rattrape l'autre.</p>`;
+  stepper($('#l5s'),'Le calcul, étape par étape',[
+    'On veut f(x) = g(x).','<b>2x − 1 = −x + 5</b>','2x + x = 5 + 1','3x = 6','x = 2',
+    'On trouve y avec f : f(2) = 2×2 − 1 = 3','Vérif avec g : g(2) = −2 + 5 = 3 ✓','Les droites se coupent en A(2 ; 3).']);
+}
+
+/* ---------- Exercices ---------- */
+const EX1=[
+  ['18',0,'18 est un entier positif.'],
+  ['−4',1,'−4 est un entier négatif.'],
+  ['0,25',2,'Deux chiffres après la virgule : décimal, mais pas entier.'],
+  ['5/6',3,'5/6 = 0,8333… ne s\'arrête jamais : pas décimal. Fraction d\'entiers : rationnel.'],
+  ['√7',4,'√7 ne s\'écrit pas comme une fraction : réel.'],
+  ['12/4',0,'12/4 = 3. Calcule avant de répondre !'],
+  ['1/2 + 1/4',2,'1/2 + 1/4 = 3/4 = 0,75 : décimal.'],
+  ['√16 − 7',1,'√16 = 4, donc 4 − 7 = −3 : entier négatif.']];
+const SETS=['ℕ','ℤ','𝔻','ℚ','ℝ'],SETN=['ℕ entiers naturels','ℤ entiers relatifs','𝔻 décimaux','ℚ rationnels','ℝ réels'];
+function exo(el){
+  el.innerHTML=`
+  <div class="meta">À faire pour la prochaine fois · environ 15 min</div>
+  <h2>Tes exercices</h2>
+  <p class="lead">Prends une feuille et un stylo. Cherche d'abord, puis vérifie ici.</p>
+  <section>
+    <h2>Exercice 1</h2>
+    <p>Pour chaque nombre, choisis le <b>plus petit ensemble</b> auquel il appartient. Calcule d'abord si besoin.</p>
+    <div class="score" id="sc">0 / ${EX1.length}</div>
+    ${EX1.map((q,i)=>`<div class="q" data-i="${i}"><div class="qexp">${q[0]}</div><div class="opts">${SETS.map((s,k)=>`<button data-k="${k}" aria-label="${SETN[k]}">${s}</button>`).join('')}</div><div class="fb"></div></div>`).join('')}
+    <div id="win"></div>
+  </section>
+  <section>
+    <h2>Exercice 2</h2>
+    <p>Donne l'<b>ensemble de définition</b> de chaque fonction.</p>
+    <div class="qa"><div class="fx">a) f(x) = x² − 3x + 4</div><details><summary>Voir la correction</summary><div class="corr"><span>Pas de fraction, pas de racine.</span><span class="fin">D = ℝ</span></div></details></div>
+    <div class="qa"><div class="fx">b) g(x) = √(3x − 6)</div><div class="hint">Coup de pouce : ce qu'il y a sous la racine doit être ≥ 0.</div><details><summary>Voir la correction</summary><div class="corr"><span>3x − 6 ≥ 0</span><span>3x ≥ 6</span><span>x ≥ 2</span><span class="fin">D = [2 ; +∞[</span></div></details></div>
+    <div class="qa"><div class="fx">c) h(x) = (x + 1)/(2x − 8)</div><div class="hint">Coup de pouce : le dénominateur doit être différent de 0.</div><details><summary>Voir la correction</summary><div class="corr"><span>2x − 8 ≠ 0</span><span>2x ≠ 8</span><span>x ≠ 4</span><span class="fin">D = ℝ \\ {4} = ]−∞ ; 4[ ∪ ]4 ; +∞[</span></div></details></div>
+    <div class="qa"><div class="fx">Défi) k(x) = √(5 − x)</div><div class="hint">Pour les motivés. Attention quand tu passes −x de l'autre côté.</div><details><summary>Voir la correction</summary><div class="corr"><span>5 − x ≥ 0</span><span>5 ≥ x</span><span class="fin">D = ]−∞ ; 5]</span></div></details></div>
+  </section>
+  <section>
+    <h2>Exercice 3</h2>
+    <p>Trouve le <b>point d'intersection</b> des deux droites. Vérifie ton résultat avec les deux fonctions.</p>
+    <div class="qa"><div class="fx">a) f(x) = 3x − 2<br>&nbsp;&nbsp;&nbsp;g(x) = −x + 6</div><details><summary>Voir la correction</summary><div class="corr"><span>3x − 2 = −x + 6</span><span>4x = 8</span><span>x = 2</span><span>f(2) = 3×2 − 2 = 4</span><span>g(2) = −2 + 6 = 4 ✓</span><span class="fin">Intersection : (2 ; 4)</span></div></details></div>
+    <div class="qa"><div class="fx">b) f(x) = x + 3<br>&nbsp;&nbsp;&nbsp;g(x) = −2x + 12</div><details><summary>Voir la correction</summary><div class="corr"><span>x + 3 = −2x + 12</span><span>3x = 9</span><span>x = 3</span><span>f(3) = 3 + 3 = 6</span><span>g(3) = −6 + 12 = 6 ✓</span><span class="fin">Intersection : (3 ; 6)</span></div></details></div>
+  </section>`;
+  let good=0;
+  el.addEventListener('click',e=>{
+    const b=e.target.closest('.opts button');if(!b||b.disabled)return;
+    const q=b.closest('.q'),d=EX1[+q.dataset.i],fb=$('.fb',q),k=+b.dataset.k;
+    if(k===d[1]){
+      b.classList.add('right');$$('.opts button',q).forEach(x=>x.disabled=true);q.classList.add('good');
+      fb.className='fb ok';fb.textContent=`${d[0]} ∈ ${SETS[k]}. ${d[2]}`;
+      good++;$('#sc').textContent=`${good} / ${EX1.length}`;
+      if(good===EX1.length)$('#win').innerHTML='<div class="win">Bravo Charly, 8 sur 8 !</div>';
+    }else{
+      b.classList.add('wrong');b.disabled=true;fb.className='fb no';fb.textContent='Pas celui-là. Si tu hésites, calcule d\'abord, puis demande-toi si les chiffres après la virgule s\'arrêtent.';
+    }
+  });
+}
+
+/* ---------- navigation ---------- */
+const LES=[['Ensembles',L1],['Image & antécédent',L2],['Définition',L3],['Intervalles',L4],['Droites',L5]];
+let cur=0,seen=new Set([0]);
+function viewCours(){
+  app.innerHTML=`<div class="chips" id="chips">${LES.map((l,i)=>`<button class="chip${seen.has(i)?' done':''}" data-i="${i}" aria-current="${i===cur}">${l[0]}</button>`).join('')}</div>
+    <div id="lz" class="lesson"></div>
+    <div class="pager"><button class="btn ghost" id="pv" ${cur===0?'disabled style="opacity:.35"':''}>← Précédent</button>
+    ${cur<LES.length-1?'<button class="btn" id="nx">Suivant →</button>':'<button class="btn" id="go">Aller aux exercices →</button>'}</div>`;
+  LES[cur][1]($('#lz'));
+  $('#chips').onclick=e=>{const b=e.target.closest('.chip');if(b)goto(+b.dataset.i)};
+  const pv=$('#pv'),nx=$('#nx'),go=$('#go');
+  if(pv)pv.onclick=()=>goto(cur-1);if(nx)nx.onclick=()=>goto(cur+1);if(go)go.onclick=()=>{location.hash='exercices'};
+  const a=$('.chip[aria-current="true"]');if(a&&a.scrollIntoView)a.scrollIntoView({inline:'center',block:'nearest'});
+}
+function goto(i){cur=Math.max(0,Math.min(LES.length-1,i));seen.add(cur);viewCours();window.scrollTo({top:0,behavior:'smooth'})}
+function route(){
+  const t=location.hash==='#exercices'?'exercices':'cours';
+  $('#t-cours').setAttribute('aria-current',t==='cours'?'page':'false');
+  $('#t-exo').setAttribute('aria-current',t==='exercices'?'page':'false');
+  if(t==='cours')viewCours();else{app.innerHTML='<div class="exo" id="ex"></div>';exo($('#ex'))}
+  window.scrollTo(0,0);
+}
+$$('nav.tabs button').forEach(b=>b.onclick=()=>{const h='#'+b.dataset.tab;if(location.hash===h||(!location.hash&&h==='#cours'))route();else location.hash=b.dataset.tab});
+window.addEventListener('hashchange',route);
+route();
 </script>
-</body>
-</html>
+
+</body></html>
