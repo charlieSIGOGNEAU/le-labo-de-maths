@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101827">
+<title>Le labo de maths de Charly</title>
+<style>
+:root{--bg:#101827;--panel:#192438;--panel2:#202f47;--ink:#f4f7fb;--muted:#b7c4d8;--lime:#c6f36b;--blue:#86d9ff;--pink:#ff9ec7;--line:#34435b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at top right,#243653 0,transparent 42%),var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}button,input{font:inherit}button{cursor:pointer}.wrap{max-width:780px;margin:auto;padding:18px 16px 90px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:8px 0 22px}.brand{font-weight:850;letter-spacing:.02em}.pill{font-size:.78rem;color:var(--lime);border:1px solid #58723c;border-radius:999px;padding:5px 10px;white-space:nowrap}.hero{padding:25px 22px;border:1px solid var(--line);border-radius:25px;background:linear-gradient(140deg,#263b57,#192438 68%);position:relative;overflow:hidden}.eyebrow{color:var(--lime);font-weight:800;text-transform:uppercase;font-size:.75rem;letter-spacing:.12em}.hero h1{font-size:clamp(2rem,8vw,3.3rem);line-height:1.02;margin:12px 0}.hero p{color:var(--muted);max-width:520px;margin-bottom:20px}.hero .sticker{position:absolute;right:17px;top:22px;font-size:2.7rem;transform:rotate(9deg)}.progressline{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:.85rem}.bar{height:7px;background:#0d1420;border-radius:9px;flex:1;overflow:hidden}.bar span{display:block;height:100%;width:0;background:var(--lime);transition:width .3s}.tabs{display:flex;gap:8px;overflow:auto;padding:17px 0 12px;position:sticky;top:0;background:#101827ed;backdrop-filter:blur(10px);z-index:4}.tab{border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:999px;padding:9px 14px;white-space:nowrap;font-weight:700}.tab.active{background:var(--lime);color:#152018;border-color:var(--lime)}section{scroll-margin-top:82px}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:24px 0 12px}.sectionhead h2{font-size:1.45rem;margin:0}.small{font-size:.83rem;color:var(--muted)}.card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:18px;margin:12px 0}.card h3{margin:0 0 8px;font-size:1.12rem}.card p{margin:7px 0;color:var(--muted)}.tag{font-size:.72rem;color:var(--blue);text-transform:uppercase;font-weight:850;letter-spacing:.08em}.math{font-size:1.15rem;font-weight:800;letter-spacing:.01em;color:var(--ink)}.highlight{color:var(--lime)}.blue{color:var(--blue)}.pink{color:var(--pink)}.example{background:#111a29;border-radius:13px;padding:13px;margin-top:12px;border:1px solid #2d3c53}.reveal{border:1px solid #50627a;border-radius:12px;padding:9px 12px;background:transparent;color:var(--blue);font-weight:750;margin-top:10px}.answer{display:none;color:var(--lime);margin-top:9px}.answer.show{display:block}.minirow{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.numberchip{border:1px solid #41516a;background:#111a29;padding:5px 10px;border-radius:10px;font-weight:750}.demo{margin-top:12px;background:#111a29;border:1px solid #2d3c53;border-radius:14px;padding:13px}.slider{width:100%;accent-color:var(--lime);margin:12px 0}.number{font-size:1.7rem;font-weight:850;color:var(--lime)}.intervalbar{height:32px;position:relative;margin:12px 8px 2px;border-bottom:2px solid #8393a8}.intervalbar:before{content:"";position:absolute;left:0;right:0;bottom:-5px;height:8px;background:repeating-linear-gradient(90deg,transparent 0 calc(10% - 1px),#8393a8 calc(10% - 1px) 10%)}.dot{position:absolute;bottom:-8px;width:14px;height:14px;border-radius:50%;background:var(--lime);border:2px solid #101827;transform:translateX(-50%)}.ticks{display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted)}.checkbtn,.primary{border:0;border-radius:12px;background:var(--lime);color:#142018;font-weight:850;padding:11px 15px}.secondary{background:var(--panel2);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:10px 13px;font-weight:750}.quizopt{display:flex;gap:10px;align-items:center;text-align:left;width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:#111a29;color:var(--ink);margin:7px 0}.quizopt:focus,.quizopt:hover{border-color:var(--blue)}.quizfeedback{min-height:24px;font-weight:700;margin-top:8px}.field{width:100%;background:#111a29;border:1px solid #4a5c76;border-radius:12px;padding:12px;color:var(--ink);margin:5px 0 10px}.exercise{counter-increment:exercise}.exhead{display:flex;gap:10px;align-items:center}.exnum{width:34px;height:34px;border-radius:11px;background:var(--lime);color:#142018;font-weight:900;display:grid;place-items:center;flex-shrink:0}.checklist{display:flex;align-items:flex-start;gap:10px;margin:10px 0;color:var(--muted)}.checklist input{margin-top:6px;accent-color:var(--lime)}.footer{margin-top:28px;text-align:center;color:var(--muted);font-size:.83rem}.hide{display:none!important}@media(min-width:600px){.hero{padding:34px}.cardsgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.cardsgrid .card{margin:0}.tabs{border-radius:0 0 16px 16px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand">✳ LE LABO DE MATHS 26/10/2026</div><div class="pill">MISSION SECONDE</div></header>
+<div class="hero">
+<div class="sticker">∑</div><div class="eyebrow">Brief de mission · 20 min</div>
+<h1>Salut Charly.<br><span class="highlight">À toi de jouer.</span></h1>
+<p>Une petite remise en route sur les fonctions : des rappels courts, des mini-manips et quelques exercices pour être prêt au prochain cours. Pas besoin d'y passer tes vacances.</p>
+<div class="progressline"><span id="progressText">0 / 4 notions vues</span><div class="bar"><span id="progressBar"></span></div></div>
+</div>
+<nav class="tabs" aria-label="Navigation"><button class="tab active" data-go="cours">Réviser</button><button class="tab" data-go="entrainement">S'entraîner</button><button class="tab" data-go="bilan">Bilan</button></nav>
+
+<section id="cours">
+<div class="sectionhead"><h2>01 — Les bases</h2><span class="small">4 mini-fiches</span></div>
+<div class="card" id="sets">
+<div class="tag">Fiche 1 · Les ensembles</div><h3>Dans quelle famille vit ce nombre ?</h3>
+<p>Les ensembles sont des familles emboîtées. Plus on avance vers la droite, plus il y a de nombres.</p>
+<div class="minirow" style="margin:14px 0"><span class="numberchip">ℕ</span><span>⊂</span><span class="numberchip">ℤ</span><span>⊂</span><span class="numberchip">𝔻</span><span>⊂</span><span class="numberchip">ℚ</span><span>⊂</span><span class="numberchip">ℝ</span></div>
+<p><b class="highlight">ℕ</b> naturels (0, 1, 2…) · <b class="highlight">ℤ</b> entiers relatifs (… −2, −1, 0, 1…) · <b class="highlight">𝔻</b> décimaux (écriture décimale finie) · <b class="highlight">ℚ</b> rationnels (fractions) · <b class="highlight">ℝ</b> réels (tous les nombres de la droite).</p>
+<div class="example"><div class="math">−3 ∈ ℤ, mais −3 ∉ ℕ</div><p>Et 0,25 ∈ 𝔻 ; √2 ∈ ℝ mais √2 ∉ ℚ.</p></div>
+<div class="demo"><b>Mini-test</b><p>Le plus petit ensemble de cette liste qui contient −7 ?</p><button class="quizopt" data-answer="false">ℕ</button><button class="quizopt" data-answer="true">ℤ</button><button class="quizopt" data-answer="false">𝔻</button><div class="quizfeedback" aria-live="polite"></div></div>
+</div>
+<div class="card" id="image">
+<div class="tag">Fiche 2 · Image et antécédent</div><h3>La fonction, c'est une machine</h3><p>Tu entres un nombre <i>x</i>, la machine calcule <i>f(x)</i>, et tu obtiens son image.</p>
+<div class="demo"><div class="minirow" style="justify-content:space-between"><span class="numberchip">Entrée x</span><span>→</span><span class="numberchip">× 2 + 1</span><span>→</span><span class="numberchip">Sortie f(x)</span></div><label for="machine" class="small">Change l'entrée :</label><input class="slider" id="machine" type="range" min="-4" max="5" value="2"><div class="minirow"><div><div class="small">Entrée</div><div class="number" id="inputNum">2</div></div><div style="font-size:1.4rem">→</div><div><div class="small">Image</div><div class="number" id="outputNum">5</div></div></div><p class="small">Ici, f(x) = 2x + 1. L'image de 2 est 5.</p></div>
+<p><b class="blue">Trouver une image :</b> on remplace x par le nombre donné.</p><p><b class="pink">Trouver un antécédent :</b> on cherche x à partir du résultat. Il peut y en avoir zéro, un ou plusieurs.</p>
+<div class="example"><div class="math">f(x) = 2x + 1</div><p>Image de 3 : f(3) = 2 × 3 + 1 = <b class="highlight">7</b>.</p><p>Antécédent de 7 : 2x + 1 = 7, donc x = <b class="highlight">3</b>.</p></div>
+<div class="demo"><b>À toi</b><p>Avec f(x) = 2x + 1, quelle est l'image de 4 ?</p><button class="quizopt" data-answer="false">8</button><button class="quizopt" data-answer="true">9</button><button class="quizopt" data-answer="false">10</button><div class="quizfeedback" aria-live="polite"></div></div>
+</div>
+<div class="card" id="domain">
+<div class="tag">Fiche 3 · Ensemble de définition</div><h3>Quelles entrées sont autorisées ?</h3><p>L'ensemble de définition, noté <b>D<sub>f</sub></b>, contient les valeurs de x pour lesquelles le calcul est possible.</p>
+<div class="example"><p><b>1. Pas de piège :</b> f(x) = 3x − 4</p><div class="math highlight">D<sub>f</sub> = ℝ</div><p><b>2. Racine carrée :</b> g(x) = √(x − 2)</p><p>On doit avoir x − 2 ≥ 0, donc x ≥ 2.</p><div class="math highlight">D<sub>g</sub> = [2 ; +∞[</div><p><b>3. Fraction :</b> h(x) = 1/(x + 3)</p><p>Le dénominateur ne doit pas être nul : x + 3 ≠ 0.</p><div class="math highlight">D<sub>h</sub> = ℝ \ {−3}</div></div>
+<div class="demo"><b>Règle express</b><p>Pour une racine carrée : ce qui est sous la racine doit être ≥ 0. Pour une fraction : le dénominateur doit être ≠ 0.</p><button class="reveal" data-reveal="domainHint">Pourquoi √(x + 4) est définie seulement si x ≥ −4 ?</button><div class="answer" id="domainHint">Parce que x + 4 ≥ 0, donc x ≥ −4. Son domaine est [−4 ; +∞[.</div></div>
+</div>
+<div class="card" id="intervals">
+<div class="tag">Fiche 4 · Intervalles</div><h3>La droite des nombres</h3><p>Un intervalle décrit une portion de la droite réelle.</p>
+<div class="cardsgrid">
+<div class="example"><div class="math">[2 ; 5]</div><p>2 et 5 sont inclus.</p><div class="minirow"><span class="highlight">●</span> 2 ━━━━━ 5 <span class="highlight">●</span></div></div>
+<div class="example"><div class="math">]2 ; 5[</div><p>2 et 5 sont exclus.</p><div class="minirow"><span class="blue">○</span> 2 ━━━━━ 5 <span class="blue">○</span></div></div>
+</div>
+<p><b class="highlight">Crochet fermé [ ]</b> : borne incluse. <b class="blue">Crochet ouvert ] [</b> : borne exclue. Avec +∞ ou −∞, la borne est toujours ouverte.</p>
+<div class="demo"><label for="intervalNumber"><b>Explore : où se place ton nombre ?</b></label><input id="intervalNumber" class="slider" type="range" min="-5" max="7" step=".5" value="2.5"><div class="number" id="intervalValue">2,5</div><div class="intervalbar"><span class="dot" id="intervalDot" style="left:62.5%"></span></div><div class="ticks"><span>−5</span><span>−2</span><span>1</span><span>4</span><span>7</span></div><p id="intervalMessage">2,5 appartient à ]2 ; 5[.</p></div>
+</div>
+<div class="card" id="intersection">
+<div class="tag">Bonus · Intersection de deux droites</div><h3>Le point où elles se croisent</h3><p>Pour trouver l'intersection de deux fonctions affines, on cherche quand leurs images sont égales.</p>
+<div class="example"><div class="math">f(x) = 2x + 1 et g(x) = −x + 7</div><p>1. On résout : 2x + 1 = −x + 7</p><p>2. 3x = 6, donc <b class="highlight">x = 2</b>.</p><p>3. On calcule y : f(2) = 5.</p><div class="math highlight">Intersection : (2 ; 5)</div></div>
+<p>À retenir : égaliser les deux expressions pour trouver x, puis remplacer x pour trouver y.</p>
+</div>
+</section>
+
+<section id="entrainement">
+<div class="sectionhead"><h2>02 — À toi de jouer</h2><span class="small">10–15 min</span></div>
+<p class="small">Fais les exercices sur papier avant d'afficher les corrections. Essaie sans calculatrice si possible.</p>
+<div class="card exercise"><div class="exhead"><div class="exnum">1</div><div><div class="tag">Classer les nombres</div><h3>Le plus petit intervalle possible</h3></div></div><p>Pour chaque nombre, donne le plus petit ensemble parmi ℕ, ℤ, 𝔻, ℚ, ℝ auquel il appartient.</p>
+<ol><li>12</li><li>−4</li><li>2,75</li><li>⅓</li><li>√2</li><li>5 − 8</li></ol>
+<button class="reveal" data-reveal="ex1">Voir la correction</button><div class="answer" id="ex1">1. ℕ · 2. ℤ · 3. 𝔻 · 4. ℚ · 5. ℝ · 6. ℤ (car 5 − 8 = −3).<br><span class="small">On choisit toujours le plus petit ensemble de la chaîne.</span></div></div>
+<div class="card exercise"><div class="exhead"><div class="exnum">2</div><div><div class="tag">Ensembles de définition</div><h3>Autorisé ou interdit ?</h3></div></div><p>Donne l'ensemble de définition de chaque fonction.</p><ol><li>f(x) = 4x − 1</li><li>g(x) = √(2x + 6)</li><li>h(x) = 5/(x − 4)</li></ol>
+<button class="reveal" data-reveal="ex2">Voir la correction</button><div class="answer" id="ex2">1. D<sub>f</sub> = ℝ.<br>2. 2x + 6 ≥ 0, donc x ≥ −3 : D<sub>g</sub> = [−3 ; +∞[.<br>3. x − 4 ≠ 0, donc x ≠ 4 : D<sub>h</sub> = ℝ \ {4}.</div></div>
+<div class="card exercise"><div class="exhead"><div class="exnum">3</div><div><div class="tag">Intersection</div><h3>Le point de rencontre</h3></div></div><p>Détermine les coordonnées du point d'intersection des droites représentatives de :</p><div class="math">f(x) = 3x − 2<br>g(x) = x + 4</div><p>Écris l'équation à résoudre, puis calcule x et y.</p><button class="reveal" data-reveal="ex3">Voir la correction</button><div class="answer" id="ex3">3x − 2 = x + 4, donc 2x = 6 et x = 3. Puis y = 3 × 3 − 2 = 7. <b>Intersection : (3 ; 7).</b></div></div>
+<div class="card exercise"><div class="exhead"><div class="exnum">4</div><div><div class="tag">Image ou antécédent ?</div><h3>Dernier check</h3></div></div><p>Soit f(x) = 5 − 2x.</p><ol><li>Calcule l'image de 3.</li><li>Trouve l'antécédent de 1.</li></ol><button class="reveal" data-reveal="ex4">Voir la correction</button><div class="answer" id="ex4">1. f(3) = 5 − 6 = −1.<br>2. 5 − 2x = 1, donc −2x = −4 et x = 2.</div></div>
+</section>
+<section id="bilan">
+<div class="sectionhead"><h2>03 — Avant de fermer</h2><span class="small">1 minute</span></div>
+<div class="card"><h3>Tu te sens comment ?</h3><p>Coche ce que tu sais refaire sans aide. Ça permettra de cibler le prochain cours.</p>
+<label class="checklist"><input type="checkbox" class="done"> Je sais classer un nombre dans ℕ, ℤ, 𝔻, ℚ ou ℝ.</label>
+<label class="checklist"><input type="checkbox" class="done"> Je sais calculer une image et trouver un antécédent.</label>
+<label class="checklist"><input type="checkbox" class="done"> Je sais trouver le domaine d'une racine et d'une fraction.</label>
+<label class="checklist"><input type="checkbox" class="done"> Je sais résoudre une intersection de deux fonctions affines.</label>
+<div class="example"><b id="bilanText">0 / 4 acquis cochés</b><p class="small">Objectif : mieux comprendre, pas tout mémoriser en une fois.</p></div>
+<button class="primary" id="finish">Terminé pour aujourd'hui</button><div class="answer" id="finishMsg">Mission terminée. Bien joué pour le travail : garde les exercices où tu as hésité pour le prochain cours.</div></div>
+</section>
+<div class="footer">Le labo de maths de Charly · Une courte session, puis retour aux vacances.</div>
+</div>
+<script>
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>{document.getElementById(b.dataset.go).scrollIntoView({behavior:'smooth'});document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t===b))}));
+document.querySelectorAll('[data-reveal]').forEach(b=>b.addEventListener('click',()=>{let el=document.getElementById(b.dataset.reveal);el.classList.toggle('show');b.textContent=el.classList.contains('show')?'Masquer la correction':'Voir la correction'}));
+document.querySelectorAll('.demo').forEach(d=>{d.querySelectorAll('.quizopt').forEach(b=>b.addEventListener('click',()=>{let f=d.querySelector('.quizfeedback');if(!f)return;f.textContent=b.dataset.answer==='true'?'Exact.':'Pas tout à fait : réessaie.';f.style.color=b.dataset.answer==='true'?'#c6f36b':'#ff9ec7';d.querySelectorAll('.quizopt').forEach(x=>x.style.borderColor=x===b?(b.dataset.answer==='true'?'#c6f36b':'#ff9ec7'):'#34435b')}))});
+const machine=document.getElementById('machine');machine.addEventListener('input',()=>{document.getElementById('inputNum').textContent=machine.value;document.getElementById('outputNum').textContent=2*Number(machine.value)+1});
+const intInput=document.getElementById('intervalNumber');function updateInterval(){let n=Number(intInput.value);document.getElementById('intervalValue').textContent=String(n).replace('.',',');document.getElementById('intervalDot').style.left=((n+5)/12*100)+'%';document.getElementById('intervalMessage').textContent=n>2&&n<5?`${String(n).replace('.',',')} appartient à ]2 ; 5[.`:n===2||n===5?`${String(n).replace('.',',')} est une borne : elle appartient à [2 ; 5], mais pas à ]2 ; 5[.`:`${String(n).replace('.',',')} est en dehors de ]2 ; 5[.`}intInput.addEventListener('input',updateInterval);
+function updateProgress(){let n=document.querySelectorAll('.done:checked').length;document.getElementById('bilanText').textContent=n+' / 4 acquis cochés';document.getElementById('progressText').textContent=n+' / 4 notions vues';document.getElementById('progressBar').style.width=(n*25)+'%'}document.querySelectorAll('.done').forEach(c=>c.addEventListener('change',updateProgress));
+document.getElementById('finish').addEventListener('click',()=>document.getElementById('finishMsg').classList.toggle('show'));
+</script>
+</body>
+</html>
